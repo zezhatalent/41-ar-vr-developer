@@ -1,0 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@tailwind base; @tailwind components; @tailwind utilities;
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+body { margin: 0; font-family: 'Inter', system-ui, sans-serif; transition: background-color 0.4s ease, color 0.4s ease; overflow-x: hidden; }
+::selection { background: rgba(0, 212, 255, 0.3); }
+* { transition-property: background-color, border-color; transition-duration: 0.25s; }
+::placeholder { color: var(--muted, #888); }
+@media (max-width: 640px) { html { font-size: 14px; } .text-5xl { font-size: 2.25rem; line-height: 2.5rem; } .text-6xl { font-size: 2.5rem; line-height: 2.75rem; } .text-4xl { font-size: 1.875rem; line-height: 2.25rem; } }
+.overflow-hidden { overflow: hidden; }
+@media (pointer: coarse) { button, a, [role="button"] { min-height: 44px; min-width: 44px; } }
+@media (max-width: 768px) { .snap-container { scroll-snap-type: y proximity; } .snap-item { scroll-snap-align: start; } }
+@media (max-width: 640px) { input, textarea { font-size: 16px !important; -webkit-appearance: none; appearance: none; } }
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; scroll-behavior: auto !important; } }
+@supports (padding: env(safe-area-inset-bottom)) { .pb-safe { padding-bottom: env(safe-area-inset-bottom); } .pt-safe { padding-top: env(safe-area-inset-top); } }
+@keyframes float { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-20px); } }
+@keyframes cube-rotate { 0% { transform: rotate(0deg) scale(1); } 50% { transform: rotate(180deg) scale(1.1); } 100% { transform: rotate(360deg) scale(1); } }
+@keyframes gradient-shift { 0% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } 100% { background-position: 0% 50%; } }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+@keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+@keyframes bounce-in { 0% { transform: scale(0.3); opacity: 0; } 50% { transform: scale(1.05); } 70% { transform: scale(0.9); } 100% { transform: scale(1); opacity: 1; } }
+.animate-float { animation: float 6s ease-in-out infinite; }
+.animate-cube-rotate { animation: cube-rotate 8s linear infinite; }
+.animate-gradient { animation: gradient-shift 3s ease infinite; background-size: 200% 200%; }
+.animate-draw { animation: draw 2s ease forwards; }
+.animate-spin-slow { animation: spin-slow 20s linear infinite; }
+.animate-bounce-in { animation: bounce-in 0.6s ease forwards; }
